@@ -20,16 +20,33 @@
   <style>
     .title {
       font-weight: bold;
-      color: rgb(255, 62, 62);
+      color: rgb(90, 90, 90);
     }
 
     .color_icon {
-      background-color: blue;
+      background-color: rgb(71, 71, 71);
       color: white;
     }
 
     .btb_cad {
-      background-color: blue;
+      background-color: rgb(71, 71, 71);
+      border-color: rgb(71, 71, 71);
+    }
+
+    .btb_cad:hover {
+      background-color: rgb(121, 121, 121);
+      border-color: rgb(121, 121, 121);
+    }
+
+    .input_bord:hover {
+      border-radius: 2px;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -webkit-box-shadow: 0px 0px 10px 1px rgb(71, 71, 71);
+      -moz-box-shadow: 0px 0px 10px 1px rgb(71, 71, 71);
+      box-shadow: 0px 0px 5px 0px rgb(71, 71, 71);
+      border: 1px solid rgb(71, 71, 71);
+      outline: none;
     }
   </style>
 
@@ -47,19 +64,19 @@
         <label class="col-form-label"><strong>Nome do aluno </strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-file-earmark-person"></i></span>
-          <select id="aluno" class="form-control" th:field="*{aluno}"
+          <select id="aluno" class="form-control input_bord" th:field="*{aluno}"
             th:classappend="${#fields.hasErrors('aluno')} ? 'is-invalid'">
             <option value="">Selecione...</option>
             <option th:each="a : ${alunos}" th:value="${a.id}" th:text=${a.nome}>NOME DO ALUNO AQUI</option>
           </select>
         </div>
       </div>
-  
+
       <div class="col-md-4">
         <label class="col-form-label"><strong>Série do aluno</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-file-earmark-person"></i></span>
-          <select id="aluno" class="form-control" th:field="*{ano}"
+          <select id="aluno" class="form-control input_bord" th:field="*{ano}"
             th:classappend="${#fields.hasErrors('ano')} ? 'is-invalid'">
             <option value="">Selecione...</option>
             <option value="6º Ano">6º ano</option>
@@ -76,7 +93,7 @@
         <label class="col-form-label"><strong>Turma do aluno</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-file-earmark-person"></i></span>
-          <select id="aluno" class="form-control" th:field="*{turma}"
+          <select id="aluno" class="form-control input_bord" th:field="*{turma}"
             th:classappend="${#fields.hasErrors('turma')} ? 'is-invalid'">
             <option value="">Selecione...</option>
             <option value="A">A</option>
@@ -85,45 +102,45 @@
           </select>
         </div>
       </div>
-  
+
       <div class="col-md-4">
         <label class="col-form-label"><strong>Data</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-calendar"></i></span>
-          <input type="date" class="form-control form-control-md" required="required" th:field="*{data}">
+          <input type="date" class="form-control form-control-md input_bord" required="required" th:field="*{data}">
         </div>
       </div>
     </div>
-  
+
     <div class="col-md-12 row pt-2">
       <div class="col-md-4">
         <label class="col-form-label"><strong>Classificação da Ocorrência</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-file-earmark-person"></i></span>
-          <select id="aluno" class="form-control" th:field="*{classificacao}"
+          <select id="aluno" class="form-control input_bord" th:field="*{classificacao}"
             th:classappend="${#fields.hasErrors('classificacao')} ? 'is-invalid'">
             <option value="">Selecione...</option>
             <option value="A">Mérito (elogio)</option>
-            <option value="B">Demérito (falta disciplinar)</option>   
+            <option value="B">Demérito (falta disciplinar)</option>
           </select>
         </div>
 
         <label class="col-form-label pt-4"><strong>Professor que reportou</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-file-earmark-person"></i></span>
-          <select id="aluno" class="form-control" th:field="*{professor}"
+          <select id="aluno" class="form-control input_bord" th:field="*{professor}"
             th:classappend="${#fields.hasErrors('professor')} ? 'is-invalid'">
             <option value="">Selecione...</option>
             <option th:each="p : ${professores}" th:value="${p.id}" th:text=${p.nome}>NOME DO PROF AQUI</option>
           </select>
         </div>
       </div>
-  
+
       <div class="col-md-4">
         <label class="col-md-12 col-form-label"><strong>Justificativa do aluno</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-patch-question"></i></span>
-          <textarea id="motivo" name="motivo" cols="40" rows="5" class="form-control"
+          <textarea id="motivo" name="motivo" cols="40" rows="5" class="form-control input_bord"
             th:field="*{justificativa}"></textarea>
         </div>
       </div>
@@ -134,7 +151,7 @@
         <label class="col-form-label"><strong>Tipo da ocorrência</strong></label>
         <div class="input-group">
           <span class="input-group-text color_icon"><i class="bi bi-file-earmark-person"></i></span>
-          <select id="aluno" class="form-control" th:field="*{tipo}"
+          <select id="aluno" class="form-control input_bord" th:field="*{tipo}"
             th:classappend="${#fields.hasErrors('tipo')} ? 'is-invalid'">
             <option value="">Selecione...</option>
             <option value="Desrespeito">Desrespeito</option>
