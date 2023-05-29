@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<body>
+
+
+
+	<nav th:fragment="nav" class="navbar bg-dark navbar-expand-lg bg-body-tertiary"
+		data-bs-theme="dark">
+		<div class="container-fluid">
+		
+			<a class="navbar-brand mb-0 h1" href="/">⠀ECIM⠀ | </a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/">Home</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link active dropdown-toggle" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">Cadastro </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="/aluno/novo">Cadastrar
+									aluno </a></li>
+							<li><a class="dropdown-item" href="/professor/novo">Cadastrar professor(a)</a></li>
+
+
+						</ul></li>
+
+					<li class="nav-item dropdown"><a
+						class="nav-link active dropdown-toggle" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">Registrar </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="/ocorrencia/novo">Registrar ocorrência de aluno
+									</a></li>
+							<li><a class="dropdown-item" href="/saida/novo">Registrar
+									saída de aluno</a></li>
+									
+
+						</ul></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle active" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">Listagem </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="/">Listar ocorrências</a></li>
+							<li><a class="dropdown-item" href="/saida/listar">Listar saídas</a></li>
+							<li><a class="dropdown-item" href="/aluno/listar">Listar alunos</a></li>
+							<li><a class="dropdown-item" href="/professor/listar">Listar professores</a></li>
+							
+
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</body>
+
+
+</html>
